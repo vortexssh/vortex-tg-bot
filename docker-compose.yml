@@ -3,6 +3,6 @@ services:
     build: .
     restart: unless-stopped
     env_file: .env
-    dns:
-      - 8.8.8.8
-      - 1.1.1.1
+    # Docker bridge DNS is broken on this VPS (Errno -3 / Network unreachable).
+    # Host network uses the same stack as curl on the machine.
+    network_mode: host
