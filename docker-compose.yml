@@ -3,3 +3,6 @@ services:
     build: .
     restart: unless-stopped
     env_file: .env
+    dns:
+      - 8.8.8.8
+      - 1.1.1.1
